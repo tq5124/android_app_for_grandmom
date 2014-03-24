@@ -1,0 +1,138 @@
+{
+  "root": {
+    "id": "iqizszyj",
+    "text": "home",
+    "layout": "map",
+    "children": [
+      {
+        "id": "ysrvirjr",
+        "text": "phone",
+        "side": "right",
+        "children": [
+          {
+            "id": "oerjktdw",
+            "text": "call from saved list"
+          },
+          {
+            "id": "enpjaqwr",
+            "text": "call from  number"
+          }
+        ]
+      },
+      {
+        "id": "nnstwgod",
+        "text": "message",
+        "side": "left",
+        "children": [
+          {
+            "id": "hqmthqpb",
+            "text": "saved phone",
+            "children": [
+              {
+                "id": "vlkshnac",
+                "text": "saved message"
+              },
+              {
+                "id": "zbupsutc",
+                "text": "other message"
+              }
+            ]
+          },
+          {
+            "id": "fxdqkumi",
+            "text": "other phone",
+            "children": [
+              {
+                "id": "bucwqrtx",
+                "text": "saved message "
+              },
+              {
+                "id": "txabvtgp",
+                "text": "other mesasge"
+              }
+            ]
+          },
+          {
+            "id": "ipaalfxo",
+            "text": "read message"
+          }
+        ]
+      },
+      {
+        "id": "aznazedx",
+        "text": "photo",
+        "side": "right",
+        "children": [
+          {
+            "id": "jmvfiqxy",
+            "text": "new photo"
+          },
+          {
+            "id": "genxigra",
+            "text": "see old photo"
+          }
+        ]
+      },
+      {
+        "id": "uvzthozw",
+        "text": "settings",
+        "side": "left",
+        "children": [
+          {
+            "id": "nwmggpbk",
+            "text": "database",
+            "children": [
+              {
+                "id": "qotvryzq",
+                "text": "saved phone"
+              },
+              {
+                "id": "xnqbadzt",
+                "text": "saved message"
+              }
+            ]
+          },
+          {
+            "id": "plvsqvdh",
+            "text": "config",
+            "children": [
+              {
+                "id": "weaktmkm",
+                "text": "gps frequence"
+              },
+              {
+                "id": "mzkspsbh",
+                "text": "bind website account"
+              }
+            ]
+          },
+          {
+            "id": "clibshxg",
+            "text": "open other apps"
+          }
+        ]
+      },
+      {
+        "id": "xcvzlqnt",
+        "text": "unread box",
+        "side": "right",
+        "children": [
+          {
+            "id": "sbuubfjw",
+            "text": "unread messages"
+          },
+          {
+            "id": "jojtzayh",
+            "text": "unread phone"
+          }
+        ]
+      },
+      {
+        "id": "cckokgxn",
+        "text": "Time",
+        "side": "left"
+      }
+    ]
+  },
+  "id": "ghdjbnqp"
+}
