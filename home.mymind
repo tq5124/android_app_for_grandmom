@@ -34,7 +34,13 @@
               },
               {
                 "id": "zbupsutc",
-                "text": "other message"
+                "text": "other message",
+                "children": [
+                  {
+                    "id": "zqhyiptf",
+                    "text": "[optional]audio input"
+                  }
+                ]
               }
             ]
           },
@@ -48,7 +54,14 @@
               },
               {
                 "id": "txabvtgp",
-                "text": "other mesasge"
+                "text": "other mesasge",
+                "children": [
+                  {
+                    "id": "eqmftaoj",
+                    "text": "[optional]audio input",
+                    "layout": "tree-right"
+                  }
+                ]
               }
             ]
           },
@@ -70,6 +83,10 @@
           {
             "id": "genxigra",
             "text": "see old photo"
+          },
+          {
+            "id": "iankubdx",
+            "text": "[optional]upload to cloud (auto, only under wifi)"
           }
         ]
       },
