@@ -4,5 +4,6 @@
     <string name="app_name">forGrandmon</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="mostUsedPerson">常用联系人</string>
 
 </resources>

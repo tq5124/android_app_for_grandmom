@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<PreferenceScreen   
+    xmlns:android="http://schemas.android.com/apk/res/android"   
+    android:title="Settings">  
+    <PreferenceCategory  
+            android:title="常用设置">  
+        <PreferenceScreen  
+                android:key="savedPhone"  
+                android:title="设置常用联系人"  
+                android:summary="增加/修改/删除拨号页面的常用联系人"  />  
+        <PreferenceScreen  
+                android:key="savedMessage"  
+                android:title="设置常用短信"  
+                android:summary="增加/修改/删除短信页面的常用短信"  />  
+        <EditTextPreference  
+                android:key="webAccount"  
+                android:title="绑定网站账号"  
+                android:summary="依次输入网站注册的账号用户名和密码"  
+                android:dialogTitle="" />  
+        <ListPreference  
+                android:key="gpsFrequency"  
+                android:title="GPS刷新频率"  
+                android:summary="设置发送GPS定位的频率"  
+                android:entries="@array/gpsFrequency_array"  
+                android:entryValues="@array/gpsFrequency_array_value"  
+                android:dialogTitle="选择频率" />  
+    </PreferenceCategory> 
+       
+    <PreferenceCategory 
+        android:title="其他选项">
+        <PreferenceScreen 
+            android:key="other_callHomeApp"
+            android:title="回到系统主页面" ></PreferenceScreen>
+        <PreferenceScreen 
+            android:key="other_help"
+            android:title="帮助手册"></PreferenceScreen>
+    </PreferenceCategory>
+        
+     
+</PreferenceScreen>  
