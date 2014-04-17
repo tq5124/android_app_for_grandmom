@@ -81,5 +81,14 @@ public class MainActivity extends Activity {
 			return rootView;
 		}
 	}
+	
+	// callback functions
+	public void onPhoneClicked(View v)
+	{
+		Intent intent = new Intent();
+        intent.putExtra("name", "hello world");
+        intent.setClass(v.getContext(), PhoneActivity.class);
+        startActivity(intent);
+	}
 
 }
