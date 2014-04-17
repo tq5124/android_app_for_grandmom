@@ -57,6 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="onMessageClicked"
                 android:contentDescription="message" />
 
         </TableRow>
@@ -71,6 +72,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="onPhotoClicked"
                 android:contentDescription="photo" />
 
             <ImageButton
@@ -78,6 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="onSettingClicked"
                 android:contentDescription="settings" />
 
         </TableRow>

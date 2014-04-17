@@ -86,8 +86,29 @@ public class MainActivity extends Activity {
 	public void onPhoneClicked(View v)
 	{
 		Intent intent = new Intent();
-        intent.putExtra("name", "hello world");
+        //intent.putExtra("name", "hello world");
         intent.setClass(v.getContext(), PhoneActivity.class);
+        startActivity(intent);
+	}
+	
+	public void onMessageClicked(View v)
+	{
+		Intent intent = new Intent();
+        intent.setClass(v.getContext(), MessageActivity.class);
+        startActivity(intent);
+	}
+	
+	public void onPhotoClicked(View v)
+	{
+		Intent intent = new Intent();
+        intent.setClass(v.getContext(), PhotoActivity.class);
+        startActivity(intent);
+	}
+	
+	public void onSettingClicked(View v)
+	{
+		Intent intent = new Intent();
+        intent.setClass(v.getContext(), SettingsPreference.class);
         startActivity(intent);
 	}
 

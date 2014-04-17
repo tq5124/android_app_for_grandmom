@@ -11,10 +11,10 @@ public class PhoneActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_phone);
-		Intent intent = getIntent();
-		Bundle bundle = intent.getExtras();
-        Button text = (Button) findViewById(R.id.phone_list_btn1);
-        text.setText("name:" + bundle.getString("name"));
+		//Intent intent = getIntent();
+		//Bundle bundle = intent.getExtras();
+        //Button text = (Button) findViewById(R.id.phone_list_btn1);
+        //text.setText("name:" + bundle.getString("name"));
 
 	}
 
