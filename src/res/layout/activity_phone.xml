@@ -7,44 +7,50 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin" >
-    
-    <TextView 
+
+    <TextView
         android:id="@+id/phone_title"
-        android:text="@string/mostUsedPerson"
-        android:textSize="20sp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    
-    <!-- 注：以下应是代码生成 -->
-    <Button 
-        android:id="@+id/phone_list_btn1"
+        android:layout_height="wrap_content"
+        android:text="@string/mostUsedPerson"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/phone_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="给“XXX”打电话"
-        android:gravity="left|center_vertical"/>
-    
-    <Button 
-        android:id="@+id/phone_list_btn2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="给“XXX”打电话"
-        android:gravity="left|center_vertical"/>
-    
-    <!-- 注：以上应是代码生成 -->
-    
-    <TextView 
+        android:orientation="vertical" >
+        <!-- 注：以下应是代码生成 -->
+
+        <Button
+            android:id="@+id/phone_list_btn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:text="给“XXX”打电话" />
+
+        <Button
+            android:id="@+id/phone_list_btn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:text="给“XXX”打电话" />
+        <!-- 注：以上应是代码生成 -->
+    </LinearLayout>
+
+    <TextView
         android:id="@+id/phone_call_other_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="或者"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"/>
-    
-    <Button 
+        android:textSize="20sp" />
+
+    <Button
         android:id="@+id/phone_call_other_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="自己输入电话号码"
-        android:gravity="left|center_vertical"/>
-    
+        android:gravity="left|center_vertical"
+        android:text="自己输入电话号码" />
+
 </LinearLayout>

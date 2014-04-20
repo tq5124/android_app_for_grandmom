@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class PhoneActivity extends Activity {
 
@@ -11,11 +12,11 @@ public class PhoneActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_phone);
-		//Intent intent = getIntent();
-		//Bundle bundle = intent.getExtras();
-        //Button text = (Button) findViewById(R.id.phone_list_btn1);
-        //text.setText("name:" + bundle.getString("name"));
-
+		// add buttons to it
+		LinearLayout layout = (LinearLayout) findViewById(R.id.phone_list);
+		Button btTest = new Button(this);
+		btTest.setText("added button");
+		layout.addView(btTest);
 	}
 
 }
