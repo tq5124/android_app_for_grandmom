@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<PreferenceScreen   
+    xmlns:android="http://schemas.android.com/apk/res/android"   
+    android:title="Settings">  
+    <PreferenceCategory  
+            android:title="已收藏列表：\n点击已有内容可以删除">  
+         <!-- auto created -->
+        <PreferenceScreen  
+                android:key="savedPhone_list1"  
+                android:title="XXX"  
+                android:summary="138-8888-8888"  />  
+         <!-- auto created -->
+        
+    </PreferenceCategory> 
+    
+    <PreferenceCategory 
+        android:title="添加收藏电话">
+        <EditTextPreference  
+                android:key="btn_addPhoneNumber"  
+                android:title="添加收藏电话"  
+                android:summary="依次输入姓名和电话"  
+                android:dialogTitle="" />  
+    </PreferenceCategory>
+       
+        
+     
+</PreferenceScreen>  

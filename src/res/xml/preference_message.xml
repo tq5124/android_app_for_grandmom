@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<PreferenceScreen   
+    xmlns:android="http://schemas.android.com/apk/res/android"   
+    android:title="Settings">  
+    <PreferenceCategory  
+            android:title="已收藏列表：\n点击已有内容可以删除">  
+         <!-- auto created -->
+        <PreferenceScreen  
+                android:key="savedMessage_list1"  
+                android:title="XXXXXXXXX"  
+                android:summary=""  />  
+         <!-- auto created -->
+        
+    </PreferenceCategory> 
+    
+    <PreferenceCategory 
+        android:title="添加收藏短信">
+        <EditTextPreference  
+                android:key="btn_addMessage"  
+                android:title="添加收藏短信内容"  
+                android:summary="输入短信内容即可"  
+                android:dialogTitle="" />  
+    </PreferenceCategory>
+       
+        
+     
+</PreferenceScreen>  
