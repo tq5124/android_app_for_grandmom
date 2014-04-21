@@ -7,6 +7,7 @@
         <PreferenceScreen  
                 android:key="savedPhone"  
                 android:title="设置常用联系人"  
+                android:defaultValue="tq5124:15121197268;fengzhe:13888888888;"
                 android:summary="增加/修改/删除拨号页面的常用联系人"  />  
         <PreferenceScreen  
                 android:key="savedMessage"  
