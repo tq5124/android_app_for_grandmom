@@ -11,21 +11,30 @@
     tools:context="com.example.debug.MainActivity"
     tools:ignore="MergeRootFrame" >
     
-    <TextView
-        android:id="@+id/main_time"
+    <LinearLayout 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="现在时间：23点11分"
+        android:orientation="horizontal">
+        
+        <TextView
+        android:id="@+id/main_time_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="现在时间："
         android:textAppearance="?android:attr/textAppearanceLarge" />
+        
+        <DigitalClock 
+	        android:id="@+id/main_clock"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:textAppearance="?android:attr/textAppearanceLarge"></DigitalClock>    
+	        
+    </LinearLayout>
 
     <TextView
         android:id="@+id/main_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/main_time"
-        android:layout_below="@+id/main_time"
         android:text="2014年4月13日"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -46,19 +55,27 @@
 
             <ImageButton
                 android:id="@+id/main_phone"
+                style="@style/Main_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="onPhoneClicked"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_weight="1"
-                android:contentDescription="phone" />
+                android:background="#ffffff"
+                android:contentDescription="phone"
+                android:onClick="onPhoneClicked"
+                android:src="@drawable/phone" />
 
             <ImageButton
                 android:id="@+id/main_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
+                android:background="#ffffff"
+                android:contentDescription="message"
                 android:onClick="onMessageClicked"
-                android:contentDescription="message" />
+                android:src="@drawable/envelope" />
 
         </TableRow>
 
@@ -72,18 +89,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:background="#ffffff"
+                android:contentDescription="photo"
                 android:onClick="onPhotoClicked"
-                android:contentDescription="photo" />
+                android:src="@drawable/camera" />
 
             <ImageButton
                 android:id="@+id/main_settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#ffffff"
+                android:contentDescription="settings"
                 android:onClick="onSettingClicked"
-                android:contentDescription="settings" />
+                android:src="@drawable/cog" />
 
         </TableRow>
     </TableLayout>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
             
 </LinearLayout>
