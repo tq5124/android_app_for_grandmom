@@ -1,0 +1,3 @@
+使用SQLite
+Sim卡和SD中获取联系人
+UI采用SimpleAdapter和Listview组成
