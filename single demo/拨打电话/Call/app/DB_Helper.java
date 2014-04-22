@@ -44,7 +44,7 @@ public class DB_Helper {
         }
     }
 
-    public static boolean TableExist(SQLiteDatabase db, String table){
+    public static boolean DB_TableExist(SQLiteDatabase db, String table){
         if(table == null)
         {
             return false;

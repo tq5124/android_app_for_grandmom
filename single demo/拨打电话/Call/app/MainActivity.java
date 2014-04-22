@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
             add_contact.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(MainActivity.this, ContactList.class);
+                    Intent intent = new Intent(MainActivity.this, ContactListActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     startActivityForResult(intent, 0);
                 }
@@ -110,13 +110,13 @@ public class MainActivity extends Activity {
     private void RefreshList()
     {
         db = DB_Helper.DB_Open("contact");
-        if (!DB_Helper.TableExist(db, "contact_list"))
+        if (!DB_Helper.DB_TableExist(db, "contact_list"))
         {
-            db.execSQL("CREATE TABLE contact_list(_id integer primary key autoincrement, name varchar(20), number varchar(50), photo varchar(255))");
+            db.execSQL("CREATE TABLE contact_list(_id integer primary key autoincrement, name varchar(20), number varchar(50),raw_id varchar(50),photo_id varchar(50))");
         }
         Cursor cursor = db.rawQuery("SELECT * from contact_list", null);
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(MainActivity.this, R.layout.contact_item, cursor,
-                new String[]{"name", "number", "photo"},
+                new String[]{"name", "number", "photo_id"},
                 new int[] {R.id.contact_name, R.id.contact_number, R.id.contact_photo}
         );
         listView.setAdapter(adapter);
