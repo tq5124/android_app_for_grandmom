@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.format.Time;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.os.Build;
 
 public class MainActivity extends Activity {
@@ -26,6 +28,7 @@ public class MainActivity extends Activity {
 			getFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
+		
 	}
 
 	@Override
@@ -112,4 +115,16 @@ public class MainActivity extends Activity {
         startActivity(intent);
 	}
 
+	@Override
+	protected void onResume()
+	{
+		super.onResume();
+		// set the date
+		Time t = new Time();
+		t.setToNow();
+		String date = new String();
+		date += t.year+"年"+(t.month+1)+"月"+t.monthDay+"日";
+		TextView tv = (TextView)findViewById(R.id.main_date);
+		tv.setText(date);
+	}
 }
