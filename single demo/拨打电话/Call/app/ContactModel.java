@@ -63,6 +63,7 @@ public class ContactModel {
         for(cursor.moveToFirst();!cursor.isAfterLast();cursor.moveToNext())
         {
             Contact contact = new Contact();
+            contact.id = Integer.parseInt(cursor.getString(cursor.getColumnIndex("_id")));
             contact.raw_id = Integer.parseInt(cursor.getString(cursor.getColumnIndex("raw_id")));
             contact.name = cursor.getString(cursor.getColumnIndex("name"));
             contact.source = cursor.getString(cursor.getColumnIndex("source"));
