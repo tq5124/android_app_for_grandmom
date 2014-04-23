@@ -53,19 +53,10 @@ public class ContactListActivity extends Activity {
                             setPositiveButton("确定", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
-                                    SQLiteDatabase db = DB_Helper.DB_Open("contact");
-                                    if (!DB_Helper.DB_TableExist(db, "contact_list"))
-                                    {
-                                        db.execSQL("CREATE TABLE contact_list(_id integer primary key autoincrement, name varchar(20), number varchar(50),raw_id varchar(50),photo_id varchar(50))");
-                                    }
+                                    ContactModel contactModel = new ContactModel(ContactListActivity.this);
                                     Contact contact = ContactListActivity.this.contactlist.get(ContactItemListener.this.pos);
-                                    db.execSQL("INSERT INTO contact_list values(null , ?, ?, ?, ?)", new String[]{
-                                            contact.name,
-                                            contact.number,
-                                            String.valueOf(contact.id),
-                                            String.valueOf(contact.photoid)
-                                    });
-                                    db.close();
+                                    contactModel.InsertOrUpdate(contact);
+                                    contactModel.close();
                                     Intent intent = getIntent();
                                     ContactListActivity.this.setResult(1, intent);
                                     ContactListActivity.this.finish();
@@ -74,9 +65,7 @@ public class ContactListActivity extends Activity {
                             setNegativeButton("取消", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
-                                    Intent intent = getIntent();
-                                    ContactListActivity.this.setResult(0, intent);
-                                    ContactListActivity.this.finish();
+                                    return;
                                 }
                             }).
                             create().show();

@@ -66,11 +66,12 @@ public class Contacts {
                     photo = BitmapFactory.decodeResource(this.context.getResources(), PHOTO_DEFAULT);
                 }
                 Contact contact = new Contact();
-                contact.id = id;
+                contact.raw_id = id;
                 contact.name = name;
                 contact.number = number;
                 contact.photo = photo;
                 contact.photoid = photoid;
+                contact.source = "SD";
                 ContactList.add(contact);
             }
             phoneCursor.close();
@@ -87,14 +88,16 @@ public class Contacts {
                 String number = phoneCursor.getString(PHONES_NUMBER_INDEX);
                 if (TextUtils.isEmpty(number))
                     continue;
+                Long id = phoneCursor.getLong(PHONES_CONTACT_ID_INDEX);
                 String name = phoneCursor.getString(PHONES_DISPLAY_NAME_INDEX);
                 Bitmap photo = BitmapFactory.decodeResource(this.context.getResources(), PHOTO_DEFAULT);
                 Contact contact = new Contact();
-                contact.id = 0;
+                contact.raw_id = id;
                 contact.name = name;
                 contact.number = number;
                 contact.photo = photo;
                 contact.photoid = 0;
+                contact.source = "SIM";
                 ContactList.add(contact);
             }
             phoneCursor.close();

@@ -13,16 +13,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 
 public class MainActivity extends Activity {
     private long ExitTime = 0;
-    private SQLiteDatabase db;
     private ListView listView = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,36 +98,19 @@ public class MainActivity extends Activity {
         return super.onKeyDown(keyCode, event);
     }
 
-
-    @Override
-    public void onDestroy()
-    {
-        super.onDestroy();
-        if(this.db != null && db.isOpen())
-        {
-            db.close();
-        }
-    }
-
     private void RefreshList()
     {
-        db = DB_Helper.DB_Open("contact");
-        if (!DB_Helper.DB_TableExist(db, "contact_list"))
-        {
-            db.execSQL("CREATE TABLE contact_list(_id integer primary key autoincrement, name varchar(20), number varchar(50),raw_id varchar(50),photo_id varchar(50))");
-        }
-        Cursor cursor = db.rawQuery("SELECT * from contact_list", null);
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(MainActivity.this, R.layout.contact_item, cursor,
-                new String[]{"name", "number", "photo_id"},
-                new int[] {R.id.contact_name, R.id.contact_number, R.id.contact_photo}
-        );
-        listView.setAdapter(adapter);
+        ContactModel contactModel = new ContactModel(this);
+        ArrayList<Contact> dbcontacts = contactModel.GetDBContacts();
+        BaseAdapter baseAdapter = new ContactsAdapter(this, dbcontacts);
+        ListView listView = (ListView)findViewById(R.id.store_contact_list);
+        listView.setAdapter(baseAdapter);
         listView.setOnItemClickListener(new OnItemClickListener(){
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Intent dialIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + ((TextView) view.findViewById(R.id.contact_number)).getText()));
                 startActivity(dialIntent);
             }
         });
-        db.close();
+        contactModel.close();
     }
 }
