@@ -7,16 +7,19 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin" >
-    
-    <Button 
+
+    <Button
         android:id="@+id/photo_new"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="我要拍新照片"/>
-    <Button 
+        android:onClick="onBtNewClicked"
+        android:text="我要拍新照片" />
+
+    <Button
         android:id="@+id/photo_old"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="我要看之前拍的照片"/>
-    
+        android:onClick="onBtOldClicked"
+        android:text="我要看之前拍的照片" />
+
 </LinearLayout>
