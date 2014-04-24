@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+	
+	<!-- 以下应为代码生成 -->
+	<Button 
+	    android:id="@+id/message_btn_sendSaved1"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="发送“XXX”"></Button>
+	
+	<Button 
+	    android:id="@+id/message_btn_sendSaved2"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="发送“XXX”"></Button>
+	<!-- 以上应为代码生成 -->
+	
+	<Button 
+	    android:id="@+id/message_btn_sendOther"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="发送其他内容"></Button>
+	                
+</LinearLayout>

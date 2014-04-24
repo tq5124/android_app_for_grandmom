@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+	
+	<TextView 
+	    android:id="@+id/message_confirm_who_title"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="发送给："/>
+	
+	<TextView 
+	    android:id="@+id/message_confirm_who_context"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="XXX"/>
+	
+	<TextView 
+	    android:id="@+id/message_confirm_what_title"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="发送内容是："/>
+	
+	<TextView 
+	    android:id="@+id/message_confirm_what_context"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="XXX"/>
+	
+	<Button 
+	    android:id="@+id/message_confirm_yes"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="我确认信息正确，发送！" />          
+	    
+	<Button 
+	    android:id="@+id/message_confirm_no"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="不发送" />      
+</LinearLayout>

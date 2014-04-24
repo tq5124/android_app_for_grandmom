@@ -3,105 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-	<TabHost
-	    android:id="@android:id/tabhost"
+	
+	<Button
+	    android:id="@+id/message_btn_send"
 	    android:layout_width="match_parent"
-	    android:layout_height="match_parent" >
-	
-	    <LinearLayout
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
-	        android:orientation="vertical" >
-	
-	        <TabWidget
-	            android:id="@android:id/tabs"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content" >
-	        </TabWidget>
-	
-	        <FrameLayout
-	            android:id="@android:id/tabcontent"
-	            android:layout_width="match_parent"
-	            android:layout_height="match_parent" >
-	
-	            <LinearLayout
-	                android:id="@+id/tab1"
-	                android:orientation="vertical"
-	                android:layout_width="match_parent"
-	                android:layout_height="match_parent" >
+	    android:layout_height="wrap_content"
+	    android:text="我要发短信"></Button>
+	<Button
+	    android:id="@+id/message_btn_read"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="我要收短信"></Button>
 	                
-	                <Button
-	                    android:id="@+id/phone_btn_send"
-	                    android:layout_width="match_parent"
-	                    android:layout_height="wrap_content"
-	                    android:text="我要发短信"></Button>
-	                <Button
-	                    android:id="@+id/phone_btn_read"
-	                    android:layout_width="match_parent"
-	                    android:layout_height="wrap_content"
-	                    android:text="我要收短信"></Button>
-	                
-	            </LinearLayout>
-	
-	            <LinearLayout
-	                android:id="@+id/tab2"
-	                android:orientation="vertical"
-	                android:layout_width="match_parent"
-	                android:layout_height="match_parent" >
-	                
-	                <!-- 以下应为代码生成 -->
-	                <Button 
-	                    android:id="@+id/phone_btn_toSaved1"
-	                    android:layout_width="match_parent"
-	                    android:layout_height="wrap_content"
-	                    android:text="给XXX发短信"></Button>
-	                
-	                <Button 
-	                    android:id="@+id/phone_btn_toSaved2"
-	                    android:layout_width="match_parent"
-	                    android:layout_height="wrap_content"
-	                    android:text="给XXX发短信"></Button>
-	                <!-- 以上应为代码生成 -->
-	                
-	                <Button 
-	                    android:id="@+id/phone_btn_toOther"
-	                    android:layout_width="match_parent"
-	                    android:layout_height="wrap_content"
-	                    android:text="给其他人发短信"></Button>
-	                
-	            </LinearLayout>
-	
-	            <LinearLayout
-	                android:id="@+id/tab3"
-	                android:orientation="vertical"
-	                android:layout_width="match_parent"
-	                android:layout_height="match_parent" >
-	                
-	                <!-- 以下应为代码生成 -->
-	                <Button 
-	                    android:id="@+id/phone_btn_sendSaved1"
-	                    android:layout_width="match_parent"
-	                    android:layout_height="wrap_content"
-	                    android:text="发送“XXX”"></Button>
-	                
-	                <Button 
-	                    android:id="@+id/phone_btn_sendSaved2"
-	                    android:layout_width="match_parent"
-	                    android:layout_height="wrap_content"
-	                    android:text="发送“XXX”"></Button>
-	                <!-- 以上应为代码生成 -->
-	                
-	                <Button 
-	                    android:id="@+id/phone_btn_sendOther"
-	                    android:layout_width="match_parent"
-	                    android:layout_height="wrap_content"
-	                    android:text="发送其他内容"></Button>
-	                
-	            </LinearLayout>
-	        </FrameLayout>
-      
-	    </LinearLayout>
-	</TabHost>
-
 </LinearLayout>
