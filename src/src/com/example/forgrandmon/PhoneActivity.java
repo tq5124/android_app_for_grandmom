@@ -1,5 +1,7 @@
 package com.example.forgrandmon;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -35,6 +37,8 @@ public class PhoneActivity extends Activity {
 		// remove all old buttons and add buttons of contacts
 		LinearLayout layout = (LinearLayout) findViewById(R.id.phone_list);
 		layout.removeAllViews();
+		if(contacts==null)
+			return;
 		for (String info : contacts) {
 			String[] namePhone = info.split(":");
 			String name = namePhone[0];
@@ -68,11 +72,14 @@ public class PhoneActivity extends Activity {
 
 				@Override
 				public void onClick(View arg0) {
-					/*Uri smsToUri = Uri.parse("smsto:" + phone);
-					Intent intent = new Intent(Intent.ACTION_SENDTO, smsToUri);
-					intent.putExtra("sms_body", "hello world");
-					startActivity(intent);*/
-					Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+phone));
+					/*
+					 * Uri smsToUri = Uri.parse("smsto:" + phone); Intent intent
+					 * = new Intent(Intent.ACTION_SENDTO, smsToUri);
+					 * intent.putExtra("sms_body", "hello world");
+					 * startActivity(intent);
+					 */
+					Intent intent = new Intent(Intent.ACTION_CALL, Uri
+							.parse("tel:" + phone));
 					startActivity(intent);
 				}
 
@@ -81,20 +88,30 @@ public class PhoneActivity extends Activity {
 		}
 	}
 
-	// this function returns the information stored by user
-	// every element in return array is like "name:tel"
+	// this function returns the information stored by user, every element is like "name:tel"
 	private String[] getStoredInfo() {
-		String[] ret;
-		// TO DO START
+		String[] ret = null;
+		// these codes are deprecated
 		// name should be <package>_preferences
 		// String PREF_NAME = "com.example.forgrandmon_preferences";
 		// SharedPreferences settings = getSharedPreferences(PREF_NAME, 0);
 		// we can't retrieve the android:defaultValue...Don't know why
-		ret = new String[] { "wuhao:15121197268", "fengzhe:13585735146" };
-		// TO DO END
+		ContactModel contacts = new ContactModel(this);
+		ArrayList<Contact> contactLists = contacts.GetDBContacts();
+		// there is no contacts
+		if (contactLists.size() == 0) {
+			return ret;
+		}
+		int sz = contactLists.size();
+		ret = new String[sz];
+		int i = 0;
+		for (Contact contact : contactLists) {
+			ret[i++] = contact.name + ":" + contact.number;
+		}
 		return ret;
 	}
 
+	// callback function of phone_call_other_btn
 	public void onBtCallOtherClicked(View v) {
 		Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"));
 		startActivity(intent);
