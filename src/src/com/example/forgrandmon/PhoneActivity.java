@@ -24,7 +24,7 @@ public class PhoneActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_phone);	
+		setContentView(R.layout.activity_phone);
 	}
 
 	@Override
@@ -39,35 +39,40 @@ public class PhoneActivity extends Activity {
 			String[] namePhone = info.split(":");
 			String name = namePhone[0];
 			final String phone = namePhone[1];
-			
-			//rewrite by tq
+
+			// rewrite by tq
 			LinearLayout bt = new LinearLayout(this);
 			bt.setOrientation(LinearLayout.HORIZONTAL);
-			bt.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-			
+			bt.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
+					LayoutParams.WRAP_CONTENT));
+
 			ImageView iv = new ImageView(this);
 			iv.setImageResource(R.drawable.user);
-			LinearLayout.LayoutParams iv_pa = new LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 0.2f);
+			LinearLayout.LayoutParams iv_pa = new LinearLayout.LayoutParams(0,
+					LayoutParams.WRAP_CONTENT, 0.2f);
 			iv_pa.setMargins(0, 0, 20, 10);
 			iv.setLayoutParams(iv_pa);
-			
+
 			TextView tv = new TextView(this);
 			tv.setText(name + "(" + phone + ")");
 			tv.setTextSize(20f);
-			tv.setLayoutParams(new LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1.0f));
-			
+			tv.setLayoutParams(new LinearLayout.LayoutParams(0,
+					LayoutParams.WRAP_CONTENT, 1.0f));
+
 			bt.addView(iv);
 			bt.addView(tv);
-			
-			//Button bt = new Button(this);
-			//bt.setText(name);
+
+			// Button bt = new Button(this);
+			// bt.setText(name);
 			bt.setOnClickListener(new OnClickListener() {
 
 				@Override
 				public void onClick(View arg0) {
-					Uri smsToUri = Uri.parse("smsto:"+phone);
+					/*Uri smsToUri = Uri.parse("smsto:" + phone);
 					Intent intent = new Intent(Intent.ACTION_SENDTO, smsToUri);
 					intent.putExtra("sms_body", "hello world");
+					startActivity(intent);*/
+					Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+phone));
 					startActivity(intent);
 				}
 
@@ -88,6 +93,11 @@ public class PhoneActivity extends Activity {
 		ret = new String[] { "wuhao:15121197268", "fengzhe:13585735146" };
 		// TO DO END
 		return ret;
+	}
+
+	public void onBtCallOtherClicked(View v) {
+		Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"));
+		startActivity(intent);
 	}
 
 }

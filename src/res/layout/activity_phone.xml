@@ -36,6 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="left|center_vertical"
+        android:onClick="onBtCallOtherClicked"
         android:text="自己输入电话号码" />
 
 </LinearLayout>
