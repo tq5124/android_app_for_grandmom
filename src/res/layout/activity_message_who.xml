@@ -2,19 +2,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
 	
 	<!-- 以下应为代码生成 -->
 	<Button 
 	    android:id="@+id/message_btn_toSaved1"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
+	    android:paddingLeft="20dp"  
+        android:drawableLeft="@drawable/user"  
 	    android:text="给XXX发短信"></Button>
 	
 	<Button 
 	    android:id="@+id/message_btn_toSaved2"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
+	    android:paddingLeft="20dp"  
+        android:drawableLeft="@drawable/user"  
 	    android:text="给XXX发短信"></Button>
 	<!-- 以上应为代码生成 -->
 	
@@ -22,6 +30,9 @@
 	    android:id="@+id/message_btn_toOther"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
+	    android:layout_marginTop="30dp"
+	    android:paddingLeft="20dp"  
+        android:drawableLeft="@drawable/user"  
 	    android:text="给其他人发短信"></Button>
 	                
 </LinearLayout>

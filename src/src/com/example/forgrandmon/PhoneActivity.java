@@ -54,7 +54,7 @@ public class PhoneActivity extends Activity {
 			iv.setImageResource(R.drawable.user);
 			LinearLayout.LayoutParams iv_pa = new LinearLayout.LayoutParams(0,
 					LayoutParams.WRAP_CONTENT, 0.2f);
-			iv_pa.setMargins(0, 0, 20, 10);
+			iv_pa.setMargins(0, 20, 20, 30);
 			iv.setLayoutParams(iv_pa);
 
 			TextView tv = new TextView(this);
