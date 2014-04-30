@@ -83,13 +83,13 @@ public class ContactActivity extends Activity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){
-            if((System.currentTimeMillis()-ExitTime) > 2000){
+           /* if((System.currentTimeMillis()-ExitTime) > 2000){
                 Toast.makeText(getApplicationContext(), "再按一次返回键，退出程序！", Toast.LENGTH_SHORT).show();
                 ExitTime = System.currentTimeMillis();
             } else {
                 finish();
                 System.exit(0);
-            }
+            }*/
             return true;
         }
         return super.onKeyDown(keyCode, event);
