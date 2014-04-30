@@ -51,6 +51,10 @@
             android:name="com.example.forgrandmon.ContactActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.example.forgrandmon.ContactListActivity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>
