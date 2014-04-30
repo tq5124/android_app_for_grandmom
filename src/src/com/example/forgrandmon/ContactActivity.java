@@ -90,6 +90,7 @@ public class ContactActivity extends Activity {
                 finish();
                 System.exit(0);
             }*/
+        	finish();
             return true;
         }
         return super.onKeyDown(keyCode, event);

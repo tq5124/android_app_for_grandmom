@@ -107,6 +107,7 @@ public class ContactListActivity extends Activity {
             finish();
             return true;
         }*/
+    	finish();
         return super.onKeyDown(keyCode, event);
     }
 
