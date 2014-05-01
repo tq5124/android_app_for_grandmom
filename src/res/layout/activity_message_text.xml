@@ -13,13 +13,15 @@
 	    android:id="@+id/message_btn_sendSaved1"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
-	    android:text="发送“XXX”"></Button>
+	    android:onClick="onTest1Clicked"
+	    android:text="发送“你今天回家吃饭吗？”"></Button>
 	
 	<Button 
 	    android:id="@+id/message_btn_sendSaved2"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
-	    android:text="发送“XXX”"></Button>
+	    android:onClick="onTest2Clicked"
+	    android:text="发送“请尽快打电话给我，谢谢。”"></Button>
 	<!-- 以上应为代码生成 -->
 	
 	<Button 
@@ -27,6 +29,7 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:layout_marginTop="30dp"
+	    android:onClick="onTest3Clicked"
 	    android:text="发送其他内容"></Button>
 	                
 </LinearLayout>
