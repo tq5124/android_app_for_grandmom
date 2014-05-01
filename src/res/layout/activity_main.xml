@@ -22,13 +22,15 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="现在时间："
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff" />
         
         <DigitalClock 
 	        android:id="@+id/main_clock"
 	        android:layout_width="wrap_content"
 	        android:layout_height="match_parent"
-	        android:textAppearance="?android:attr/textAppearanceLarge"></DigitalClock>    
+	        android:textAppearance="?android:attr/textAppearanceLarge"
+	        android:textColor="#ffffff"></DigitalClock>    
 	        
     </LinearLayout>
 
@@ -37,7 +39,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="2014年4月13日"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#ffffff" />
 
     <TableLayout
         android:id="@+id/tableLayout1"
