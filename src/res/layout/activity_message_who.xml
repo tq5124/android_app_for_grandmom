@@ -15,7 +15,7 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:paddingLeft="20dp"  
-        android:drawableLeft="@drawable/user"  
+        android:drawableLeft="@drawable/user_white"  
 	    android:text="给XXX发短信"></Button>
 	
 	<Button 
@@ -23,7 +23,7 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:paddingLeft="20dp"  
-        android:drawableLeft="@drawable/user"  
+        android:drawableLeft="@drawable/user_white"  
 	    android:text="给XXX发短信"></Button>
 	<!-- 以上应为代码生成 -->
 	
@@ -33,7 +33,7 @@
 	    android:layout_height="wrap_content"
 	    android:layout_marginTop="30dp"
 	    android:paddingLeft="20dp"  
-        android:drawableLeft="@drawable/user"  
+        android:drawableLeft="@drawable/user_white"  
 	    android:text="给其他人发短信"></Button>
 	                
 </LinearLayout>
