@@ -20,5 +20,9 @@
     <style name="Main_btn" parent="AppTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    <style name="DefaultFontStyle">   
+    	<item name="android:textColor">#ffffff</item>  
+	</style>  
 
 </resources>

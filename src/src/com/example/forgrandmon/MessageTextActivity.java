@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.View;
+import android.widget.Toast;
 
 public class MessageTextActivity extends Activity {
 
@@ -21,12 +22,14 @@ public class MessageTextActivity extends Activity {
 		SmsManager smsManager = SmsManager.getDefault();  
 	    PendingIntent pintent = PendingIntent.getBroadcast(MessageTextActivity.this, 0, new Intent(), 0);  
 	    smsManager.sendTextMessage("13585735146", null, "今天回家吃饭吗？", pintent, null);  
+	    Toast.makeText(this, "已发送", Toast.LENGTH_SHORT);
 	}
 	
 	public void onTest2Clicked(View v) {
 		SmsManager smsManager = SmsManager.getDefault();  
 	    PendingIntent pintent = PendingIntent.getBroadcast(MessageTextActivity.this, 0, new Intent(), 0);  
-	    smsManager.sendTextMessage("13585735146", null, "今天回家吃饭吗？", pintent, null);  
+	    smsManager.sendTextMessage("13585735146", null, "今天回家吃饭吗？", pintent, null);
+	    Toast.makeText(this, "已发送", Toast.LENGTH_SHORT);
 	}
 	
 	public void onTest3Clicked(View v) {

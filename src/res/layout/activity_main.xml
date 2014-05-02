@@ -11,28 +11,15 @@
     android:background="@drawable/background"
     tools:context="com.example.debug.MainActivity"
     tools:ignore="MergeRootFrame" >
-    
-    <LinearLayout 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
         
-        <TextView
-        android:id="@+id/main_time_title"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:text="现在时间："
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ffffff" />
-        
-        <DigitalClock 
-	        android:id="@+id/main_clock"
-	        android:layout_width="wrap_content"
-	        android:layout_height="match_parent"
-	        android:textAppearance="?android:attr/textAppearanceLarge"
-	        android:textColor="#ffffff"></DigitalClock>    
-	        
-    </LinearLayout>
+	<DigitalClock
+	    android:id="@+id/main_clock"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center"
+	    android:textSize="40sp"
+	    android:textColor="#ffffff" >
+</DigitalClock>    
 
     <TextView
         android:id="@+id/main_date"
@@ -40,7 +27,8 @@
         android:layout_height="wrap_content"
         android:text="2014年4月13日"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:gravity="center" />
 
     <TableLayout
         android:id="@+id/tableLayout1"

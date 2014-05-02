@@ -11,6 +11,6 @@ public class SettingsPreference extends PreferenceActivity { //NOT activity!
 
         // Initialize the preference screen defined in /res/xml/preference.xml
         addPreferencesFromResource(R.xml.preferences_settings); //NOT setContentView
-    }
+    }	
 
 }

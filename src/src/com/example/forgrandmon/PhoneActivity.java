@@ -51,7 +51,7 @@ public class PhoneActivity extends Activity {
 					LayoutParams.WRAP_CONTENT));
 
 			ImageView iv = new ImageView(this);
-			iv.setImageResource(R.drawable.user);
+			iv.setImageResource(R.drawable.user_white);
 			LinearLayout.LayoutParams iv_pa = new LinearLayout.LayoutParams(0,
 					LayoutParams.WRAP_CONTENT, 0.2f);
 			iv_pa.setMargins(0, 20, 20, 30);
