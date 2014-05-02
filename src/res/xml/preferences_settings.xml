@@ -20,7 +20,7 @@
             android:title="设置常用短信" />
 
         <EditTextPreference
-            android:dialogTitle=""
+            android:dialogTitle="格式：用户名/密码。比如：tq/123456"
             android:key="webAccount"
             android:summary="依次输入网站注册的账号用户名和密码"
             android:title="绑定网站账号" />
@@ -37,6 +37,10 @@
         <PreferenceScreen
             android:key="other_callHomeApp"
             android:title="回到系统主页面" >
+            <intent
+            	android:action="android.intent.action.MAIN"
+            	android:targetPackage="com.example.forgrandmon"
+            	android:targetClass="com.example.forgrandmon.MainActivity" />
         </PreferenceScreen>
         <PreferenceScreen
             android:key="other_help"
