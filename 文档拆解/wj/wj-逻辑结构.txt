@@ -1,0 +1,53 @@
+6.1
+6.1常量定义
+final string AppName
+6.2变量定义
+语言Java
+客户端
+Contact[] ContactList
+string IMEI
+string Session
+string PhotoPath
+string PhonecallRecordPath
+Phonecall[] PhonecallList
+string MessageRecordPath
+string MessageDraftPath
+string MessageFavourPath
+int GPSfrequence
+Message[] MsgList
+服务端
+语言PHP
+int ExpireTime
+array GPSList
+string IMEI
+
+public Contact {
+	public id
+	public string name 
+	public string number
+	public string nickname
+	public int state
+}
+public Phonecall {
+	public int id
+	public int timestamp
+	public string destnumber
+	public double length
+	public int state
+}
+public Message {
+	public int id
+	public int timestamp
+	public string destnumber
+	public string content
+	public int state
+}
+6.3结构定义
+所有数据抽象都是用面向对象的类来表达，故没有结构定义
+json:{
+	"time":"",
+	"location-longitude":""
+	"location-latitude":""
+}
+6.4全局定义
+$_POST
