@@ -4,20 +4,62 @@ import com.example.forgrandmon.R;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.Service;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.text.format.Time;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
-import android.os.Build;
+import android.widget.Toast;
+import android.provider.Settings;
 
 public class MainActivity extends Activity {
+	
+	//BY WJ
+	private LocationManager locationManager;
+	//BY WJ
+	GPSService.GPSBinder binder;
+	//BY WJ
+	private ServiceConnection connection = new ServiceConnection()
+	{
+		@Override
+		public void onServiceConnected(ComponentName name,IBinder service){
+			MainActivity.this.binder = (GPSService.GPSBinder)service;
+		}
+		
+		@Override
+		public void onServiceDisconnected(ComponentName name){
+		
+		}
+	};
+	
+	//BY WJ
+	public void GPSInitialize() {
+		this.locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+		if (this.locationManager.isProviderEnabled(android.location.LocationManager.GPS_PROVIDER)) {
+			Intent intent = new Intent(MainActivity.this, GPSService.class);
+			bindService(intent,this.connection,Service.BIND_AUTO_CREATE);
+        } else {
+        	Toast.makeText(this, "请开启GPS功能！", Toast.LENGTH_SHORT).show();
+        	Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+            startActivityForResult(intent,0);
+		}
+	}
+	
+	//BY WJ
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent intent){
+		this.GPSInitialize();
+	}
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +70,7 @@ public class MainActivity extends Activity {
 			getFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
-		
+		this.GPSInitialize();
 	}
 
 	@Override
