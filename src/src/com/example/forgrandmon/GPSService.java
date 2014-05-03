@@ -1,13 +1,19 @@
 package com.example.forgrandmon;
 
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 import org.json.JSONObject;
+
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -31,7 +37,6 @@ public class GPSService extends Service{
 	private double latitude = 0;
 	private double longitude = 0;
 	private String IMEI = "";
-    
     private GPSBinder binder = new GPSBinder();
     public class GPSBinder extends Binder{
         void setFrequency(int minute){
@@ -71,18 +76,17 @@ public class GPSService extends Service{
                         // TODO Auto-generated method stub  
                         super.run();  
                         try{
-    		            	URI url = new URI("http://59.78.16.94:9999/index5.html");
-    		            	HttpPost request = new HttpPost(url);  
-    		            	// 先封装一个 JSON 对象  
-    		            	JSONObject param = new JSONObject();
-    		            	param.put("imei", GPSService.this.IMEI);
-    		            	param.put("latitude", String.valueOf(GPSService.this.latitude));  
-    		            	param.put("longitude",String.valueOf(GPSService.this.longitude));  
-    		            	// 绑定到请求 Entry  
-    		            	StringEntity se = new StringEntity(param.toString(),HTTP.UTF_8);   
-    		            	request.setEntity(se);  
+    		            	URI url = new URI("http://59.78.16.94/PHP/website/index.php/device/reply_device_info");
+    		            	HttpPost httpPost = new HttpPost(url); 
+    		                // 设置HTTP POST请求参数必须用NameValuePair对象 
+    		                List<NameValuePair> params = new ArrayList<NameValuePair>(); 
+    		                params.add(new BasicNameValuePair("imei", GPSService.this.IMEI)); 
+    		                params.add(new BasicNameValuePair("latitude", String.valueOf(GPSService.this.latitude))); 
+    		                params.add(new BasicNameValuePair("longitude",String.valueOf(GPSService.this.longitude)));  
+    		            	// 绑定到请求 Entry 
+    		                httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8)); 
     		            	// 发送请求  
-    		            	HttpResponse httpResponse = new DefaultHttpClient().execute(request); 
+    		            	HttpResponse httpResponse = new DefaultHttpClient().execute(httpPost); 
     	            	} catch(Exception e){
     	            		Toast.makeText(GPSService.this, e.toString(), Toast.LENGTH_SHORT).show();
     	            	}
