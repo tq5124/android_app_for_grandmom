@@ -1,7 +1,5 @@
 package com.example.forgrandmon;
 
-import java.lang.Thread.State;
-
 import com.example.forgrandmon.R;
 
 import android.app.Activity;

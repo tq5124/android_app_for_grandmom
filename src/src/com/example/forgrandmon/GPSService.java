@@ -9,11 +9,9 @@ import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
-import org.json.JSONObject;
 
 import android.app.Service;
 import android.content.Context;
@@ -38,6 +36,8 @@ public class GPSService extends Service{
 	private double latitude = 0;
 	private double longitude = 0;
 	private String IMEI = "";
+	private String TEL = "";
+	private String DEVICE = "";
     private GPSBinder binder = new GPSBinder();
     public class GPSBinder extends Binder{
         void setFrequency(int minute){
@@ -80,10 +80,12 @@ public class GPSService extends Service{
     		            	URI url = new URI("http://59.78.16.94/PHP/website/index.php/device/reply_device_info");
     		            	HttpPost httpPost = new HttpPost(url); 
     		                // 设置HTTP POST请求参数必须用NameValuePair对象 
-    		                List<NameValuePair> params = new ArrayList<NameValuePair>(); 
-    		                params.add(new BasicNameValuePair("imei", GPSService.this.IMEI)); 
-    		                params.add(new BasicNameValuePair("latitude", String.valueOf(GPSService.this.latitude))); 
-    		                params.add(new BasicNameValuePair("longitude",String.valueOf(GPSService.this.longitude)));  
+    		                List<NameValuePair> params = new ArrayList<NameValuePair>();
+    		                params.add(new BasicNameValuePair("IMEI", GPSService.this.IMEI));
+    		                params.add(new BasicNameValuePair("phoneNumber",String.valueOf(GPSService.this.TEL)));
+    		                params.add(new BasicNameValuePair("phoneType",String.valueOf(GPSService.this.DEVICE)));
+    		                params.add(new BasicNameValuePair("latitude", String.valueOf(GPSService.this.latitude)));
+    		                params.add(new BasicNameValuePair("longitude",String.valueOf(GPSService.this.longitude)));
     		            	// 绑定到请求 Entry 
     		                httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8)); 
     		            	// 发送请求
@@ -104,6 +106,8 @@ public class GPSService extends Service{
 		super.onCreate();
     	TelephonyManager telephonyManager= (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
     	this.IMEI = telephonyManager.getDeviceId();
+    	this.TEL = telephonyManager.getLine1Number();
+    	this.DEVICE = telephonyManager.getDeviceId();
 		this.locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		// 获得最好的定位效果
 		this.criteria.setAccuracy(Criteria.ACCURACY_FINE);			//设置为最大精度
@@ -115,7 +119,7 @@ public class GPSService extends Service{
 			// 获得当前的位置提供者
 		    //String provider = this.locationManager.getBestProvider(this.criteria,true);
 		    // 获得当前的位置
-		    Location location = locationManager.getLastKnownLocation(locationManager.GPS_PROVIDER);
+		    Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 		    if(location != null){
 			    Geocoder gc = new Geocoder(this);
 			    //根据经纬度获得地址信息
