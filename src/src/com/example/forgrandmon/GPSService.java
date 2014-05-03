@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
@@ -85,10 +86,12 @@ public class GPSService extends Service{
     		                params.add(new BasicNameValuePair("longitude",String.valueOf(GPSService.this.longitude)));  
     		            	// 绑定到请求 Entry 
     		                httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8)); 
-    		            	// 发送请求  
-    		            	HttpResponse httpResponse = new DefaultHttpClient().execute(httpPost); 
+    		            	// 发送请求
+    		                HttpClient client = new DefaultHttpClient();
+    		            	HttpResponse httpResponse = client.execute(httpPost);
     	            	} catch(Exception e){
-    	            		Toast.makeText(GPSService.this, e.toString(), Toast.LENGTH_SHORT).show();
+    	            		
+    	            		//Toast.makeText(GPSService.this, e.toString(), Toast.LENGTH_SHORT).show();
     	            	}
                     }  
                 }.start();

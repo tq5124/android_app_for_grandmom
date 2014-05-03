@@ -1,5 +1,7 @@
 package com.example.forgrandmon;
 
+import java.lang.Thread.State;
+
 import com.example.forgrandmon.R;
 
 import android.app.Activity;
@@ -10,6 +12,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.text.format.Time;
@@ -70,6 +74,34 @@ public class MainActivity extends Activity {
 			getFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
+		ConnectivityManager connectivityManager = (ConnectivityManager) this.getSystemService(CONNECTIVITY_SERVICE);
+		NetworkInfo current = connectivityManager.getActiveNetworkInfo(); // 获取代表联网状态的NetWorkInfo对象    
+	    if(current == null || !current.isConnected()){
+			NetworkInfo[] info = connectivityManager.getAllNetworkInfo();  
+		    if(info!=null){
+		    	boolean hasWIFI = false;
+		        for(int i=0;i<info.length;i++){
+		            if(info[i].getType() == ConnectivityManager.TYPE_WIFI && !info[i].isConnected()){
+		            	Toast.makeText(this, "请开启WIFI功能！", Toast.LENGTH_SHORT).show();
+		            	hasWIFI = true;
+		            	Intent intent = new Intent(android.provider.Settings.ACTION_WIFI_SETTINGS);
+		            	// 跳转到无线wifi网络设置界面
+		            	startActivity(intent);
+			            break;
+		            }
+		        }
+		        if(!hasWIFI){
+			        for(int i=0;i<info.length;i++){
+				        if(info[i].getType() == ConnectivityManager.TYPE_MOBILE && !info[i].isConnected()){
+			            	Toast.makeText(this, "请开启流量功能！", Toast.LENGTH_SHORT).show();
+			            	Intent intent = new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS);
+			            	// 跳转到无线网络设置界面 
+			            	startActivity(intent);
+			            }
+			        }
+		        }
+		    }
+	    }
 		this.GPSInitialize();
 	}
 
