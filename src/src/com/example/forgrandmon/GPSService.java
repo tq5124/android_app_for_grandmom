@@ -77,7 +77,7 @@ public class GPSService extends Service{
                         // TODO Auto-generated method stub  
                         super.run();  
                         try{
-    		            	URI url = new URI("http://59.78.16.94/PHP/website/index.php/device/reply_device_info");
+    		            	URI url = new URI("http://59.78.16.94/PHP/website/index.php/device/reply_device_locations");
     		            	HttpPost httpPost = new HttpPost(url); 
     		                // 设置HTTP POST请求参数必须用NameValuePair对象 
     		                List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -86,6 +86,8 @@ public class GPSService extends Service{
     		                params.add(new BasicNameValuePair("phoneType",String.valueOf(GPSService.this.DEVICE)));
     		                params.add(new BasicNameValuePair("latitude", String.valueOf(GPSService.this.latitude)));
     		                params.add(new BasicNameValuePair("longitude",String.valueOf(GPSService.this.longitude)));
+    		                params.add(new BasicNameValuePair("username","admin"));
+    		                params.add(new BasicNameValuePair("password","admin"));
     		            	// 绑定到请求 Entry 
     		                httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8)); 
     		            	// 发送请求
@@ -140,7 +142,7 @@ public class GPSService extends Service{
 			
 		}
         //this.locationManager.requestLocationUpdates(provider,600,5,locationListener ,Looper.myLooper());
-	    this.locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,600,0,this.locationListener ,Looper.myLooper());
+	    this.locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,60000,0,this.locationListener ,Looper.myLooper());
 	}
 	
 	

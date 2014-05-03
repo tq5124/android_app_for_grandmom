@@ -16,7 +16,7 @@ public class DB_Helper {
         if(!Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())){
            return null;
         }
-        String appdir_path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "Call";
+        String appdir_path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "forgranman";
         File appdir = new File(appdir_path);
         if(!appdir.exists()){
             appdir.mkdir();

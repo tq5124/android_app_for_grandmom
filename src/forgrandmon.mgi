@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <CommunicationClass name="com.example.forgrandmon.DB_Helper" x="145" y="441"/>
+    <CommunicationClass
+        name="com.example.forgrandmon.MainActivity.Buttom_share" x="416" y="52"/>
+    <CommunicationClass name="com.example.forgrandmon.MessageActivity"
+        x="567" y="335"/>
+    <CommunicationClass
+        name="com.example.forgrandmon.SettingsPreference" x="621" y="159"/>
+    <CommunicationClass name="com.example.forgrandmon.PhotoActivity"
+        x="552" y="401"/>
+    <CommunicationClass
+        name="com.example.forgrandmon.ContactListActivity" x="344" y="120">
+        <Association
+            destinationClassName="com.example.forgrandmon.Contact"
+            endpointName="contactlist" kind="Simple"/>
+        <Communication destinationClassName="com.example.forgrandmon.Contacts"/>
+    </CommunicationClass>
+    <CommunicationClass name="com.example.forgrandmon.ContactsAdapter"
+        x="35" y="335">
+        <Association
+            destinationClassName="com.example.forgrandmon.Contact"
+            endpointName="contacts" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="com.example.forgrandmon.GPSService"
+        x="565" y="99">
+        <Association
+            destinationClassName="com.example.forgrandmon.GPSService.GPSBinder"
+            endpointName="binder" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="com.example.forgrandmon.ContactActivity"
+        x="62" y="139">
+        <Communication destinationClassName="com.example.forgrandmon.ContactModel"/>
+    </CommunicationClass>
+    <CommunicationClass name="com.example.forgrandmon.PhoneActivity"
+        x="374" y="415">
+        <Communication destinationClassName="com.example.forgrandmon.ContactModel"/>
+    </CommunicationClass>
+    <CommunicationClass name="com.example.forgrandmon.MainActivity"
+        x="206" y="127">
+        <Association
+            destinationClassName="com.example.forgrandmon.GPSService.GPSBinder"
+            endpointName="binder" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="com.example.forgrandmon.Contacts" x="512" y="180">
+        <Association
+            destinationClassName="com.example.forgrandmon.Contact"
+            endpointName="ContactList" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="com.example.forgrandmon.GPSService.GPSBinder" x="31" y="256"/>
+    <CommunicationClass
+        name="com.example.forgrandmon.MainActivity.PlaceholderFragment"
+        x="204" y="48"/>
+    <CommunicationClass name="com.example.forgrandmon.ContactModel"
+        x="181" y="284">
+        <Communication destinationClassName="com.example.forgrandmon.DB_Helper"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="com.example.forgrandmon.MessageTextActivity" x="645" y="255"/>
+    <CommunicationClass
+        name="com.example.forgrandmon.MessageWhoActivity" x="418" y="251">
+        <Communication destinationClassName="com.example.forgrandmon.ContactModel"/>
+    </CommunicationClass>
+    <CommunicationClass name="com.example.forgrandmon.Contact" x="75" y="54"/>
+</ClassDiagram>
