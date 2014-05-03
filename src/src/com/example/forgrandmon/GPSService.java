@@ -77,7 +77,7 @@ public class GPSService extends Service{
                         // TODO Auto-generated method stub  
                         super.run();  
                         try{
-    		            	URI url = new URI("http://59.78.16.94/PHP/website/index.php/device/reply_device_locations");
+    		            	URI url = new URI("http://tq5124.dongyueweb.com/forgrandmon/index.php/device/reply_device_locations");
     		            	HttpPost httpPost = new HttpPost(url); 
     		                // 设置HTTP POST请求参数必须用NameValuePair对象 
     		                List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -142,7 +142,7 @@ public class GPSService extends Service{
 			
 		}
         //this.locationManager.requestLocationUpdates(provider,600,5,locationListener ,Looper.myLooper());
-	    this.locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,60000,0,this.locationListener ,Looper.myLooper());
+	    this.locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,5000,0,this.locationListener ,Looper.myLooper());
 	}
 	
 	

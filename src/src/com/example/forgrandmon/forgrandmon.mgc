@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ClassDiagram>
-    <Class name="com.example.forgrandmon.DB_Helper" x="-32" y="245">
+    <Class name="com.example.forgrandmon.DB_Helper" x="1041" y="393">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -10,7 +10,7 @@
             accessors-accepted="false" constructors-accepted="false"/>
     </Class>
     <Class name="com.example.forgrandmon.MainActivity.Buttom_share"
-        x="714" y="380">
+        x="689" y="390">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -19,7 +19,7 @@
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
     </Class>
-    <Class name="com.example.forgrandmon.MessageActivity" x="651" y="46">
+    <Class name="com.example.forgrandmon.MessageActivity" x="685" y="14">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -28,7 +28,7 @@
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
     </Class>
-    <Class name="com.example.forgrandmon.SettingsPreference" x="998" y="239">
+    <Class name="com.example.forgrandmon.SettingsPreference" x="1044" y="471">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -37,7 +37,7 @@
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
     </Class>
-    <Class name="com.example.forgrandmon.PhotoActivity" x="995" y="150">
+    <Class name="com.example.forgrandmon.PhotoActivity" x="921" y="304">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -83,7 +83,7 @@
             destinationClassName="com.example.forgrandmon.GPSService.GPSBinder"
             endpointName="binder" kind="Simple"/>
     </Class>
-    <Class name="com.example.forgrandmon.ContactActivity" x="712" y="157">
+    <Class name="com.example.forgrandmon.ContactActivity" x="686" y="158">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -93,7 +93,7 @@
             accessors-accepted="false" constructors-accepted="false"/>
         <Communication destinationClassName="com.example.forgrandmon.ContactModel"/>
     </Class>
-    <Class name="com.example.forgrandmon.PhoneActivity" x="714" y="310">
+    <Class name="com.example.forgrandmon.PhoneActivity" x="689" y="305">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -115,6 +115,15 @@
             destinationClassName="com.example.forgrandmon.GPSService.GPSBinder"
             endpointName="binder" kind="Simple"/>
     </Class>
+    <Class name="com.example.forgrandmon.GPSService.GPSBinder" x="227" y="422">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
     <Class name="com.example.forgrandmon.Contacts" x="394" y="63">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
@@ -127,18 +136,9 @@
             destinationClassName="com.example.forgrandmon.Contact"
             endpointName="ContactList" kind="Simple"/>
     </Class>
-    <Class name="com.example.forgrandmon.GPSService.GPSBinder" x="227" y="422">
-        <AttributesDisplayFilter public-accepted="true"
-            private-accepted="true" protected-accepted="true"
-            default-accepted="true" static-accepted="false"/>
-        <MethodDisplayFilter public-accepted="true"
-            private-accepted="false" protected-accepted="false"
-            default-accepted="false" static-accepted="false"
-            accessors-accepted="false" constructors-accepted="false"/>
-    </Class>
     <Class
         name="com.example.forgrandmon.MainActivity.PlaceholderFragment"
-        x="715" y="470">
+        x="690" y="470">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -147,7 +147,7 @@
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
     </Class>
-    <Class name="com.example.forgrandmon.ContactModel" x="443" y="175">
+    <Class name="com.example.forgrandmon.ContactModel" x="971" y="157">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -157,7 +157,7 @@
             accessors-accepted="false" constructors-accepted="false"/>
         <Communication destinationClassName="com.example.forgrandmon.DB_Helper"/>
     </Class>
-    <Class name="com.example.forgrandmon.MessageTextActivity" x="857" y="46">
+    <Class name="com.example.forgrandmon.MessageTextActivity" x="909" y="10">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -165,16 +165,6 @@
             private-accepted="false" protected-accepted="false"
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
-    </Class>
-    <Class name="com.example.forgrandmon.MessageWhoActivity" x="1042" y="47">
-        <AttributesDisplayFilter public-accepted="true"
-            private-accepted="true" protected-accepted="true"
-            default-accepted="true" static-accepted="false"/>
-        <MethodDisplayFilter public-accepted="true"
-            private-accepted="false" protected-accepted="false"
-            default-accepted="false" static-accepted="false"
-            accessors-accepted="false" constructors-accepted="false"/>
-        <Communication destinationClassName="com.example.forgrandmon.ContactModel"/>
     </Class>
     <Class name="com.example.forgrandmon.Contact" x="216" y="34">
         <AttributesDisplayFilter public-accepted="true"
@@ -184,5 +174,15 @@
             private-accepted="false" protected-accepted="false"
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.example.forgrandmon.MessageWhoActivity" x="686" y="98">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="com.example.forgrandmon.ContactModel"/>
     </Class>
 </ClassDiagram>
