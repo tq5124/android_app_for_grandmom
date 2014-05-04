@@ -19,16 +19,20 @@ public class MessageTextActivity extends Activity {
 
 	// all the rest is for test
 	public void onTest1Clicked(View v) {
+		Intent i = getIntent();
+		String phone = i.getStringExtra("phone");
 		SmsManager smsManager = SmsManager.getDefault();  
 	    PendingIntent pintent = PendingIntent.getBroadcast(MessageTextActivity.this, 0, new Intent(), 0);  
-	    smsManager.sendTextMessage("13585735146", null, "今天回家吃饭吗？", pintent, null);  
+	    smsManager.sendTextMessage(phone, null, "今天回家吃饭吗？", pintent, null);  
 	    Toast.makeText(this, "已发送", Toast.LENGTH_SHORT);
 	}
 	
 	public void onTest2Clicked(View v) {
+		Intent i = getIntent();
+		String phone= i.getStringExtra("phone");
 		SmsManager smsManager = SmsManager.getDefault();  
 	    PendingIntent pintent = PendingIntent.getBroadcast(MessageTextActivity.this, 0, new Intent(), 0);  
-	    smsManager.sendTextMessage("13585735146", null, "今天回家吃饭吗？", pintent, null);
+	    smsManager.sendTextMessage(phone, null, "请尽快给我打电话", pintent, null);
 	    Toast.makeText(this, "已发送", Toast.LENGTH_SHORT);
 	}
 	

@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
 	//BY WJ
 	public void GPSInitialize() {
 		this.locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-		if (this.locationManager.isProviderEnabled(android.location.LocationManager.GPS_PROVIDER)) {
+		if (this.locationManager != null && this.locationManager.isProviderEnabled(android.location.LocationManager.GPS_PROVIDER)) {
 			Intent intent = new Intent(MainActivity.this, GPSService.class);
 			bindService(intent,this.connection,Service.BIND_AUTO_CREATE);
         } else {
@@ -75,34 +75,20 @@ public class MainActivity extends Activity {
 		}
 		TelephonyManager manager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
 		if(manager.getSimState() == TelephonyManager.SIM_STATE_READY){
-			ConnectivityManager connectivityManager = (ConnectivityManager) this.getSystemService(CONNECTIVITY_SERVICE);
-			NetworkInfo current = connectivityManager.getActiveNetworkInfo(); // 获取代表联网状态的NetWorkInfo对象    
-		    if(current == null || !current.isConnected()){
-				NetworkInfo[] info = connectivityManager.getAllNetworkInfo();  
-			    if(info!=null){
-			    	boolean hasWIFI = false;
-			        for(int i=0;i<info.length;i++){
-			            if(info[i].getType() == ConnectivityManager.TYPE_WIFI && !info[i].isConnected()){
-			            	Toast.makeText(this, "请开启WIFI功能！", Toast.LENGTH_SHORT).show();
-			            	hasWIFI = true;
-			            	Intent intent = new Intent(android.provider.Settings.ACTION_WIFI_SETTINGS);
-			            	// 跳转到无线wifi网络设置界面
-			            	startActivity(intent);
-				            break;
-			            }
-			        }
-			        if(!hasWIFI){
-				        for(int i=0;i<info.length;i++){
-					        if(info[i].getType() == ConnectivityManager.TYPE_MOBILE && !info[i].isConnected()){
-				            	Toast.makeText(this, "请开启流量功能！", Toast.LENGTH_SHORT).show();
-				            	Intent intent = new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS);
-				            	// 跳转到无线网络设置界面 
-				            	startActivity(intent);
-				            }
-				        }
-			        }
-			    }
-		    }
+			if(NetworkCheck.isNetworkAvailable(this)){
+				if(NetworkCheck.is3G(this)){
+					Toast.makeText(this, "现在您使用的是3G流量！", Toast.LENGTH_SHORT).show();
+				}
+				if(NetworkCheck.isWifi(this)){
+					Toast.makeText(this, "现在您使用的是WIFI！", Toast.LENGTH_SHORT).show();
+				}
+			} else {
+				if(NetworkCheck.isWifiEnabled(this)){
+					Toast.makeText(this, "请开启WIFI功能！", Toast.LENGTH_SHORT).show();
+					Intent intent = new Intent(android.provider.Settings.ACTION_WIFI_SETTINGS);
+	            	startActivity(intent);
+				}
+			}
 			this.GPSInitialize();
 		} else {
 			Toast.makeText(this, "请插入SIM卡！", Toast.LENGTH_SHORT).show();
