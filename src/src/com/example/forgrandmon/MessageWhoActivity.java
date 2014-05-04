@@ -73,6 +73,7 @@ public class MessageWhoActivity extends Activity {
 			                    .commit();  */
 					Intent i = new Intent(getBaseContext(),
 							MessageTextActivity.class);
+					i.putExtra("phone", phone);
 					startActivity(i);
 				}
 
