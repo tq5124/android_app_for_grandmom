@@ -83,7 +83,7 @@ public class MainActivity extends Activity {
 					Toast.makeText(this, "现在您使用的是WIFI！", Toast.LENGTH_SHORT).show();
 				}
 			} else {
-				if(NetworkCheck.isWifiEnabled(this)){
+				if(!NetworkCheck.isWifiEnabled(this)){
 					Toast.makeText(this, "请开启WIFI功能！", Toast.LENGTH_SHORT).show();
 					Intent intent = new Intent(android.provider.Settings.ACTION_WIFI_SETTINGS);
 	            	startActivity(intent);
