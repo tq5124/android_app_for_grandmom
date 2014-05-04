@@ -47,14 +47,18 @@ public class MainActivity extends Activity {
 	
 	//BY WJ
 	public void GPSInitialize() {
-		this.locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-		if (this.locationManager != null && this.locationManager.isProviderEnabled(android.location.LocationManager.GPS_PROVIDER)) {
-			Intent intent = new Intent(MainActivity.this, GPSService.class);
-			bindService(intent,this.connection,Service.BIND_AUTO_CREATE);
-        } else {
-        	Toast.makeText(this, "请开启GPS功能！", Toast.LENGTH_SHORT).show();
-        	Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-            startActivityForResult(intent,0);
+		try{
+			this.locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+			if (this.locationManager != null && this.locationManager.isProviderEnabled(android.location.LocationManager.GPS_PROVIDER)) {
+				Intent intent = new Intent(MainActivity.this, GPSService.class);
+				bindService(intent,this.connection,Service.BIND_AUTO_CREATE);
+	        } else {
+	        	Toast.makeText(this, "请开启GPS功能！", Toast.LENGTH_SHORT).show();
+	        	Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+	            startActivityForResult(intent,0);
+			}
+		} catch(Exception e){
+			Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
 		}
 	}
 	
@@ -83,16 +87,16 @@ public class MainActivity extends Activity {
 					Toast.makeText(this, "现在您使用的是WIFI！", Toast.LENGTH_SHORT).show();
 				}
 			} else {
-				if(NetworkCheck.isWifiEnabled(this)){
+				if(!NetworkCheck.isWifiEnabled(this)){
 					Toast.makeText(this, "请开启WIFI功能！", Toast.LENGTH_SHORT).show();
 					Intent intent = new Intent(android.provider.Settings.ACTION_WIFI_SETTINGS);
 	            	startActivity(intent);
 				}
 			}
-			this.GPSInitialize();
 		} else {
 			Toast.makeText(this, "请插入SIM卡！", Toast.LENGTH_SHORT).show();
 		}
+		this.GPSInitialize();
 		
 	}
 
